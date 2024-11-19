@@ -13,6 +13,7 @@ def load_data(file_path):
     Returns:
     - pd.DataFrame: The loaded dataset as a DataFrame.
     """
-    data = pd.read_csv(file_path)
+    raw_data = pd.read_csv(file_path)
+    data = raw_data[raw_data['troponin'] < 10]
     print("Data loaded successfully.")
     return data
